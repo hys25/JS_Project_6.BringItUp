@@ -930,12 +930,16 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_slider_slider_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider/slider-main */ "./src/js/modules/slider/slider-main.js");
+/* harmony import */ var _modules_slider_slider_main__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_slider_main__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_playVideo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/playVideo */ "./src/js/modules/playVideo.js");
 
 
 window.addEventListener('DOMContentLoaded', function () {
-  var slider = new _modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"]('.page', '.next');
+  var slider = new _modules_slider_slider_main__WEBPACK_IMPORTED_MODULE_0___default.a({
+    btns: '.next',
+    page: '.page'
+  });
   slider.render();
   var player = new _modules_playVideo__WEBPACK_IMPORTED_MODULE_1__["default"]('.showup .play', '.overlay');
   player.init();
@@ -1032,104 +1036,14 @@ function () {
 
 /***/ }),
 
-/***/ "./src/js/modules/slider.js":
-/*!**********************************!*\
-  !*** ./src/js/modules/slider.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/js/modules/slider/slider-main.js":
+/*!**********************************************!*\
+  !*** ./src/js/modules/slider/slider-main.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Slider; });
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Slider =
-/*#__PURE__*/
-function () {
-  function Slider(page, btns) {
-    _classCallCheck(this, Slider);
-
-    this.page = document.querySelector(page);
-    this.slides = this.page.children;
-    this.btns = document.querySelectorAll(btns);
-    this.slideIndex = 1;
-  }
-
-  _createClass(Slider, [{
-    key: "showSlides",
-    value: function showSlides(n) {
-      var _this = this;
-
-      if (n > this.slides.length) {
-        this.slideIndex = 1;
-      }
-
-      if (n < 1) {
-        this.slideIndex = this.slides.length;
-      }
-
-      try {
-        this.hanson.style.opacity = '0';
-
-        if (n === 3) {
-          this.hanson.classList.add('animated');
-          setTimeout(function () {
-            _this.hanson.style.opacity = '1';
-
-            _this.hanson.classList.add('slideInUp');
-          }, 3000);
-        } else {
-          this.hanson.classList.remove('slideInUp');
-        }
-      } catch (e) {}
-
-      this.slides.forEach(function (slide) {
-        slide.style.display = 'none';
-      });
-      this.slides[this.slideIndex - 1].style.display = 'block';
-    }
-  }, {
-    key: "plusSlides",
-    value: function plusSlides(n) {
-      this.showSlides(this.slideIndex += n);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      try {
-        this.hanson = document.querySelector('.hanson');
-      } catch (e) {}
-
-      this.btns.forEach(function (item) {
-        item.addEventListener('click', function () {
-          _this2.plusSlides(1);
-        });
-        item.parentNode.previousElementSibling.addEventListener('click', function (e) {
-          e.preventDefault();
-          _this2.slideIndex = 1;
-
-          _this2.showSlides(_this2.slideIndex);
-        });
-      });
-      this.showSlides(this.slideIndex);
-    }
-  }]);
-
-  return Slider;
-}();
-
-
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Gprog\\BringItUp\\src\\js\\modules\\slider\\slider-main.js: Unterminated string constant (1:19)\n\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mSlider\u001b[39m from \u001b[32m'./slider;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 2 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mclass\u001b[39m \u001b[33mMainSlider\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mSlider\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m          constructor (page\u001b[33m,\u001b[39m btns) {\u001b[0m\n    at Parser.raise (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:6983:17)\n    at Parser.readString (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:7978:20)\n    at Parser.getTokenFromCode (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:7630:14)\n    at Parser.nextToken (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:7203:12)\n    at Parser.next (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:7132:10)\n    at Parser.eat (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:7137:12)\n    at Parser.eatContextual (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:8338:44)\n    at Parser.expectContextual (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:8342:15)\n    at Parser.parseImport (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:12004:12)\n    at Parser.parseStatementContent (D:\\Gprog\\BringItUp\\node_modules\\@babel\\parser\\lib\\index.js:10764:27)");
 
 /***/ })
 
